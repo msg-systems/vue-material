@@ -14,7 +14,7 @@
   }
 
   function fuzzyHighlight (text, term) {
-    if (term.length === 0 || !fuzzy(term, text)) {
+    if (term.length === 0 || !fuzzy(term.toLowerCase(), text.toLowerCase())) {
       return text
     }
 

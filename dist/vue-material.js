@@ -10320,7 +10320,7 @@ function getHTMLOutput(str) {
 }
 
 function fuzzyHighlight(text, term) {
-  if (term.length === 0 || !(0, _fuzzysearch2.default)(term, text)) {
+  if (term.length === 0 || !(0, _fuzzysearch2.default)(term.toLowerCase(), text.toLowerCase())) {
     return text;
   }
 
