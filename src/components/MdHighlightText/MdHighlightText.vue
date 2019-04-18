@@ -1,6 +1,7 @@
 <script>
   import Vue from 'vue'
   import MdComponent from 'core/MdComponent'
+  import fuzzy from 'fuzzysearch'
 
   function getHTMLOutput (str) {
     let text = str
@@ -13,7 +14,7 @@
   }
 
   function fuzzyHighlight (text, term) {
-    if (term.length === 0) {
+    if (term.length === 0 || !fuzzy(term, text)) {
       return text
     }
 
